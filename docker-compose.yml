@@ -1,0 +1,27 @@
+services:
+  flux-eco-ilias-user-orbital:
+    image: fluxms/flux-eco-ilias-user-orbital:v2022-01-08-2
+    environment:
+      - FLUX_ILIAS_REST_API_CLIENT_CLIENT=medi01
+      - FLUX_ILIAS_REST_API_CLIENT_URL=http://10.100.12.192
+      - FLUX_ILIAS_REST_API_CLIENT_USER_FILE=/run/secrets/flux_ilias_rest_api_client_user
+      - FLUX_ILIAS_REST_API_CLIENT_PASSWORD_FILE=/run/secrets/flux_ilias_rest_api_client_password
+      - FLUX_ECO_ILIAS_USER_ORBITAL_DISPATCHER_CONFIG_ARCHIVE_PATH=https://github.com/learn-medi-ch/flux-eco-ilias-user-orbital-dispatcher-config/archive/refs/tags/v2022-01-08-4.tar.gz
+    secrets:
+      - flux_ilias_rest_api_client_user
+      - flux_ilias_rest_api_client_password
+  medi-eco-ilias-user-orchestrator-orbital:
+    image: fluxms/medi-eco-ilias-user-orchestrator-orbital:v2022-01-08-3
+    environment:
+      - MEDI_ECO_ILIAS_ORCHESTRATOR_ORBITAL_DISPATCHER_CONFIG_ARCHIVE_PATH=https://github.com/learn-medi-ch/medi-eco-ilias-user-orchestrator-orbital-dispatcher-config/archive/refs/tags/v2022-01-08-4.tar.gz
+    volumes:
+      - ../volumes/medi-eco-ilias-user-orchestrator-orbital/data:/app/data/
+secrets:
+  flux_ilias_rest_api_client_user:
+    file: "../secrets/flux_ilias_rest_api_client_user"
+  flux_ilias_rest_api_client_password:
+    file: "../secrets/flux_ilias_rest_api_client_password"
+
+
+
+
