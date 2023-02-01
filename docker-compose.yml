@@ -1,6 +1,6 @@
 services:
   flux-eco-ilias-user-orbital:
-    image: fluxms/flux-eco-ilias-user-orbital:v2022-01-08-7
+    image: fluxms/flux-eco-ilias-user-orbital:v2023-02-01-1
     environment:
       - FLUX_ECO_MESSAGE_STREAM_ORBITAL_HOST=10.100.16.154
       - FLUX_ILIAS_REST_API_CLIENT_CLIENT=medi01
@@ -14,7 +14,7 @@ services:
     volumes:
       - ../volumes/flux-eco-ilias-user-orbital/data:/opt/flux-eco-ilias-user-orbital/data
   medi-eco-ilias-user-orchestrator-orbital:
-    image: fluxms/medi-eco-ilias-user-orchestrator-orbital:v2022-01-08-6
+    image: fluxms/medi-eco-ilias-user-orchestrator-orbital:v2023-02-01-1
     environment:
       - FLUX_ECO_MESSAGE_STREAM_ORBITAL_HOST=10.100.16.154
       - MEDI_ECO_ILIAS_ORCHESTRATOR_ORBITAL_DISPATCHER_CONFIG_ARCHIVE_PATH=https://github.com/learn-medi-ch/medi-eco-ilias-user-orchestrator-orbital-dispatcher-config/archive/refs/tags/v2023-01-16-1.tar.gz
