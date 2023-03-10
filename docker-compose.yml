@@ -1,6 +1,6 @@
 services:
   flux-eco-ilias-user-orbital:
-    image: fluxms/flux-eco-ilias-user-orbital:v2023-02-01-1
+    image: fluxms/flux-eco-ilias-user-orbital:v2023-03-10-1
     environment:
       - FLUX_ECO_MESSAGE_STREAM_ORBITAL_HOST=10.100.16.154
       - FLUX_ILIAS_REST_API_CLIENT_CLIENT=medi01
